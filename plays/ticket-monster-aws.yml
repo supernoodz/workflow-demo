@@ -23,10 +23,10 @@
     # aws_pem: /var/www/miq/vmdb/july2017.pem
     aws_pem: /root/.ssh/id_rsa
 
-  - name: show pem
-    command: cat "{{ aws_pem }}"
-
   tasks:
+    - name: show pem
+      command: cat {{ aws_pem }}
+
     - name: Launch DB instance
       local_action:
         module: ec2
