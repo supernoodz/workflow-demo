@@ -24,6 +24,9 @@
     aws_pem: ~/.ssh/id_rsa
 
   tasks:
+    - debug:
+      msg: ansible_default_ipv4.address
+
     - name: ip
       command: echo `ip a`
 
