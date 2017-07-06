@@ -5,9 +5,9 @@
   connection: local
 
   vars:
-    region:   us-east-1
+    region:   eu-west-1
     ami:      ami-81cf0c97 
-    keypair:  "{{ ec2_keypair_name | default('aws-jmarc') }}"
+    keypair:  "{{ ec2_keypair_name | default('july2017') }}"
     set_dns:  False
     count:    2
     tags_db:
@@ -17,7 +17,7 @@
       env:  "{{ tags_env  | default('prod') }}"
       type: "{{ tags_type | default('app') }}"
     wait_for_ssh: False
-    provider_id: 10000000000004
+    provider_id: 4
     max_retries: 9 
     retry_interval: 20
 
@@ -27,7 +27,7 @@
         module: ec2
         keypair: "{{ keypair }}"
         instance_type: "{{ type | default('t2.micro') }}"
-        vpc_subnet_id: "subnet-{{ vpc_subnet | default('d931e1e5') }}"
+        vpc_subnet_id: "subnet-{{ vpc_subnet | default('2fbd5876') }}"
         image: "{{ ami }}"
         region: "{{ region }}"
         count: 1
@@ -41,7 +41,7 @@
         module: ec2
         keypair: "{{ keypair }}"
         instance_type: "{{ type | default('t2.micro') }}"
-        vpc_subnet_id: "subnet-{{ vpc_subnet | default('d931e1e5') }}"
+        vpc_subnet_id: "subnet-{{ vpc_subnet | default('2fbd5876') }}"
         image: "{{ ami }}"
         region: "{{ region }}"
         count: "{{ count }}"
