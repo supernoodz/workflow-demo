@@ -25,7 +25,7 @@
 
   tasks:
     - name: ip
-      command: ip a
+      command: echo `ip a`
 
     - name: show pem
       command: cat {{ aws_pem }}
