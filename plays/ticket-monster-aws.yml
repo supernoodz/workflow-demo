@@ -24,8 +24,8 @@
     aws_pem: ~/.ssh/id_rsa
 
   tasks:
-    - name: pwd
-      command: pwd
+    - name: ip
+      command: ip a
 
     - name: show pem
       command: cat {{ aws_pem }}
