@@ -85,7 +85,7 @@
 
     # Debug pause for 5 minutes to see if EMS refresh isn't picking up the new instances
     - name: sleep for a specified interval
-      command: sleep 300
+      command: sleep 120
    
     - name: Set the Provider URL
       set_fact:
