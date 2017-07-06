@@ -85,8 +85,8 @@
         provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
 
     # Debug pause for 5 minutes to see if EMS refresh isn't picking up the new instances
-    - pause:
-      minutes: 5
+    - name: sleep for a specified interval
+      command: sleep 300
 
     - name: Refresh Amazon EC2 provider in CloudForms
       uri:
