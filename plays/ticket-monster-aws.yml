@@ -21,9 +21,12 @@
     max_retries: 9 
     retry_interval: 20
     # aws_pem: /var/www/miq/vmdb/july2017.pem
-    aws_pem: /root/.ssh/id_rsa
+    aws_pem: ~/.ssh/id_rsa
 
   tasks:
+    - name: pwd
+      command: pwd
+
     - name: show pem
       command: cat {{ aws_pem }}
 
