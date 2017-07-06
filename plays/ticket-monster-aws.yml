@@ -79,14 +79,14 @@
         name: "{{ item.public_ip }}"
         groups: app_provisioned
       with_items: "{{ ec2_app.instances }}"
-   
-    - name: Set the Provider URL
-      set_fact:
-        provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
 
     # Debug pause for 5 minutes to see if EMS refresh isn't picking up the new instances
     - name: sleep for a specified interval
       command: sleep 300
+   
+    - name: Set the Provider URL
+      set_fact:
+        provider_url: "{{ manageiq.api_url }}/api/providers/{{ provider_id }}"
 
     - name: Refresh Amazon EC2 provider in CloudForms
       uri:
