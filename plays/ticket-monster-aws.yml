@@ -6,7 +6,7 @@
 
   vars:
     region:   eu-west-1
-    ami:      ami-81cf0c97 
+    ami:      ami-f1978897 
     keypair:  "{{ ec2_keypair_name | default('july2017') }}"
     set_dns:  False
     count:    2
