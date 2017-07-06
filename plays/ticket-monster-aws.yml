@@ -24,7 +24,7 @@
     aws_pem: /root/.ssh/id_rsa
 
   - name: show pem
-    command: cat {{ aws_pem }}
+    command: cat "{{ aws_pem }}"
 
   tasks:
     - name: Launch DB instance
