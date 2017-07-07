@@ -20,8 +20,9 @@
     provider_id: 4
     max_retries: 9 
     retry_interval: 20
-    aws_pem: /var/www/miq/vmdb/july2017.pem
-    # aws_pem: ~/.ssh/id_rsa
+    # Following key must be accessible to awx user on CF appliance
+    aws_pem: /var/www/miq/vmdb/july2017.pem   # this works with awx as owner
+    # aws_pem: ~/.ssh/id_rsa                  # this doesn't, file not found for reasons unknown
 
   tasks:
     - debug:
